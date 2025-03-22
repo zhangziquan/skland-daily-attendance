@@ -6,8 +6,8 @@ export async function messagePusher(url: string, title: string, content: string)
   
     const payload = {
       title,
-      content: content,
-      description: content,
+      msgtype: "text",
+      text:{ "content": content }
     }
     try {
       const resp = await fetch(
