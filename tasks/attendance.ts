@@ -49,10 +49,7 @@ const attendanceContext = createContext<AttendanceContext>({
 // Export composable function for accessing context
 const useAttendanceContext = attendanceContext.use
 
-// 是否启用终末地签到
-const ENDFIELD_ENABLED = true
-
-const ATTENDANCE_AVAILABLE_APPCODE = ['arknights', ...(ENDFIELD_ENABLED ? ['endfield'] : [])]
+const ATTENDANCE_AVAILABLE_APPCODE = ['arknights', 'endfield']
 
 async function processAccount(
   token: string,
