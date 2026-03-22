@@ -9,9 +9,10 @@ const BASE_URL = `http://${HOST}:${PORT}`
 
 core.info('🚀 准备启动 Nitro 服务...')
 
-// 启动服务
-const server = spawn('pnpm', ['dev'], {
+// 启动服务（shell: true 保证 Windows 下能找到 pnpm.cmd）
+const server = spawn('pnpm dev', {
   stdio: 'inherit',
+  shell: true,
   env: {
     ...process.env,
     NITRO_PORT: String(PORT),
