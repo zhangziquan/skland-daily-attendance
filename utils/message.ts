@@ -94,7 +94,10 @@ export function createMessageCollector(options: CreateMessageCollectorOptions): 
     const urls = options.notificationUrls ? toArray(options.notificationUrls) : []
     const sender = createSender(urls)
 
-    await sender.send(title, content)
+    await sender.send({
+      msgtype: 'text',
+      text:{content:{{content}}}
+    })
 
     // Exit with error if any error occurred
     if (hasError && options.onError) {
